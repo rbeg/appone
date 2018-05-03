@@ -6,5 +6,10 @@ pipeline {
         git(url: 'https://github.com/rbeg/appone.git', branch: 'master', credentialsId: 'jenkins_ci')
       }
     }
+    stage('Build') {
+      steps {
+        sh 'npm install'
+      }
+    }
   }
 }
