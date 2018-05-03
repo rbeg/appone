@@ -16,5 +16,10 @@ pipeline {
         bat 'npm run test'
       }
     }
+    stage('') {
+      steps {
+        cleanWs(cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, cleanWhenAborted: true)
+      }
+    }
   }
 }
